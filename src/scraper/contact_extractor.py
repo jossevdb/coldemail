@@ -83,7 +83,11 @@ class ContactExtractor:
         generic_patterns = [
             'noreply', 'no-reply', 'mailer', 'postmaster',
             'webmaster', 'admin', 'example.com', 'test@',
-            'spam', 'abuse', 'privacy'
+            'spam', 'abuse', 'privacy',
+            # OCMW emails (niet relevant voor doelafdelingen)
+            'ocmw', '@ocmw',
+            # Andere niet-relevante emails
+            'algemeen.directeur', 'personeelsdienst', 'onthaal@'
         ]
 
         email_lower = email.lower()
@@ -203,8 +207,8 @@ class ContactExtractor:
             department = self.match_department(context)
 
             # Alleen opslaan als we een afdeling hebben kunnen matchen
-            # OF als de context relevant lijkt
-            if department or self._context_seems_relevant(context):
+            # Striktere filtering: ALLEEN als er een afdeling match is
+            if department:
                 contact = Contact(
                     name=name,
                     email=email,
