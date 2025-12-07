@@ -35,6 +35,8 @@ logs/
 output/
 data/cache/
 *.tmp
+scraper_output.log
+nohup.out
 
 # OS
 .DS_Store
