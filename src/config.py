@@ -50,7 +50,7 @@ SEARCH_PATHS = [
 
 # Scraper instellingen
 SCRAPER_CONFIG = {
-    'rate_limit_seconds': 3,  # Wacht tijd tussen requests
+    'rate_limit_seconds': 5,  # Wacht tijd tussen requests (verhoogd van 3 naar 5 om 429 errors te voorkomen)
     'timeout': 15,  # Request timeout in seconden
     'max_retries': 3,  # Maximaal aantal retries bij falen
     'user_agent': 'Mozilla/5.0 (compatible; VlaamseGemeenteBot/1.0; +https://example.com/bot)',

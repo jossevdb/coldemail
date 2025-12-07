@@ -124,6 +124,10 @@ class PageScraper:
 
                 if response.status_code == 200:
                     return response.text
+                elif response.status_code == 429:
+                    # Rate limiting - wacht langer en ga niet verder proberen
+                    logger.warning(f"Status 429 (Rate Limited) voor {url} - site blokkeert ons, skip deze pagina")
+                    return None
                 else:
                     logger.warning(f"Status {response.status_code} voor {url}")
 
@@ -135,7 +139,7 @@ class PageScraper:
             if attempt < self.max_retries - 1:
                 time.sleep(2 ** attempt)  # Exponential backoff
 
-        logger.error(f"Gefaald om {url} op te halen na {self.max_retries} pogingen")
+        logger.warning(f"Gefaald om {url} op te halen na {self.max_retries} pogingen - ga door naar volgende")
         return None
 
     def extract_links(self, html: str, base_url: str, search_paths: List[str]) -> Set[str]:
