@@ -39,6 +39,9 @@ scraper_output.log
 nohup.out
 checkpoint_monitor.log
 monitor_checkpoints.sh
+live_scraper.log
+run_scraper.sh
+scraper_runs.log
 
 # OS
 .DS_Store
