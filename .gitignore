@@ -31,8 +31,8 @@ wheels/
 *~
 
 # Project specific
-logs/*.log
-output/*.xlsx
+logs/
+output/
 data/cache/
 *.tmp
 
