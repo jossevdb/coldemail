@@ -37,6 +37,8 @@ data/cache/
 *.tmp
 scraper_output.log
 nohup.out
+checkpoint_monitor.log
+monitor_checkpoints.sh
 
 # OS
 .DS_Store
