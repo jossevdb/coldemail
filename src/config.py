@@ -50,12 +50,12 @@ SEARCH_PATHS = [
 
 # Scraper instellingen
 SCRAPER_CONFIG = {
-    'rate_limit_seconds': 5,  # Wacht tijd tussen requests (verhoogd van 3 naar 5 om 429 errors te voorkomen)
-    'timeout': 15,  # Request timeout in seconden
-    'max_retries': 3,  # Maximaal aantal retries bij falen
+    'rate_limit_seconds': 2,  # Verlaagd naar 2 voor snelheid (was 5)
+    'timeout': 10,  # Verlaagd naar 10 (was 15)
+    'max_retries': 2,  # Verlaagd naar 2 (was 3)
     'user_agent': 'Mozilla/5.0 (compatible; VlaamseGemeenteBot/1.0; +https://example.com/bot)',
     'respect_robots_txt': True,
-    'max_pages_per_site': 20,  # Limiteer aantal pagina's per gemeente
+    'max_pages_per_site': 15,  # Verlaagd naar 15 (was 20) voor snelheid
 }
 
 # Vlaamse gemeentes per provincie (volledige lijst)
