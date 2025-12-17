@@ -42,6 +42,8 @@ monitor_checkpoints.sh
 live_scraper.log
 run_scraper.sh
 scraper_runs.log
+*.tar.gz
+*.zip
 
 # OS
 .DS_Store
